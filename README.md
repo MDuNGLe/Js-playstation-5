@@ -1,2 +1,3 @@
-# Js-playstation-5
-playstation 5 - project
+# Playstation 5
+
+## Создан и настроен проект на React с использованием Vite.
