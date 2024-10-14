@@ -1,11 +1,13 @@
-import background from "../assets/backgrond.png";
+import background from "../assets/background.png";
 import playstation from "../assets/Playstation.png";
+import dualshock from "../assets/dualshock.png";
 
 export const MainPage = () => {
     return (
-        <div className="w-screen relative">
-            <img src={background} alt="backgrond" className="w-full relative"/>
-            <img src={playstation} alt="" className="absolute top-0 left-20"/>
+        <div className="relative">
+            <img src={background} alt="backgrond" className="relative"/>
+            <img src={playstation} alt="" className="absolute top-[390px] left-[400px]"/>
+            <img src={dualshock} alt="dualshock" className="absolute top-[560px] left-[610px]"/>
         </div>
     );
 
