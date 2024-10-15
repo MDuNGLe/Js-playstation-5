@@ -15,20 +15,9 @@ import MicroButton from '../assets/button-micro.svg';
 import PSButton from '../assets/psButton.svg';
 
 const Gamepad = () => {
-    const [screenOn, setScreenOn] = useState(false); // Состояние для экрана
-
-    // Функция для переключения состояния экрана
-    const toggleScreen = () => {
-        setScreenOn(prev => !prev); // Переключаем состояние
-        console.log(`Экран ${!screenOn ? "включён" : "выключен"}`); // Сообщение в консоль
-    };
 
     return (
         <div>
-
-            {/* Отображаем состояние экрана */}
-            <p className="text-center mb-4">{screenOn ? 'Экран включен' : 'Экран выключен'}</p>
-
             {/* Стрелочки */}
             <button style={{position: 'absolute', top: '708px', left: '808px'}}>
                 <img src={ArrowUp} alt="Arrow Up" className="m-0 p-0 block"/>
@@ -59,9 +48,7 @@ const Gamepad = () => {
 
             {/* Вспомогательные кнопки */}
             <button
-                style={{position: 'absolute', top: '788px', left: '945px'}}
-                onClick={toggleScreen} // Добавляем обработчик события
-            >
+                style={{position: 'absolute', top: '788px', left: '945px'}}>
                 <img src={PSButton} alt="PSButton" className="m-0 p-0 block"/>
             </button>
             <button style={{position: 'absolute', top: '825px', left: '946px'}}>
