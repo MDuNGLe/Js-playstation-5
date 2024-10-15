@@ -1,8 +1,8 @@
-import User from './data/User.jsx';
-import System from './data/System';
-import Console from './data/Console';
-import Game from './data/Game';
-import Menu from './data/Menu';
+import User from '../data/User';
+import System from '../data/System';
+import Console from '../data/Console';
+import Game from '../data/Game';
+import Menu from '../data/Menu';
 
 const App = () => {
     // Создаем пользователя
@@ -45,8 +45,8 @@ const App = () => {
 
             <h1>Список игр</h1>
             <ul>
-                {menu.games.map((game, index) => (
-                    <li key={index}>
+                {menu.games.map((game) => (
+                    <li key={game.title}>
                         {game.title} - Потраченные часы: {game.hoursPlayed} - Достижения: {game.achievements.join(', ')}
                     </li>
                 ))}

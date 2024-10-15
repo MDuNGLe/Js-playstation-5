@@ -1,5 +1,3 @@
-// src/components/GameItem.jsx
-import React from 'react';
 
 const GameItem = ({ game }) => {
     return (

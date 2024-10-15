@@ -1,5 +1,3 @@
-// src/components/GameList.jsx
-import React from 'react';
 import GameItem from './GameItem';
 
 const GameList = ({ games }) => {
