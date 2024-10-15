@@ -5,8 +5,6 @@ const ConsoleScreen = () => {
     return (
         <div className="console-screen  w-[100px]">
             <Header />
-
-
         </div>
     );
 };
