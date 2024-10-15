@@ -1,10 +1,9 @@
-import Header from './Header.jsx';
 import '../index.css';
 
 const ConsoleScreen = () => {
     return (
-        <div className="console-screen  w-[100px]">
-            <Header />
+        <div className="console-screen w-[100px]">
+            {/* Другие элементы экрана консоли */}
         </div>
     );
 };

@@ -50,3 +50,64 @@
     border-radius: 5px;
     margin-top: 20px;
 }
+
+body {
+    background-color: black; /* Цвет фона */
+    color: white; /* Цвет текста */
+    font-family: 'Arial', sans-serif; /* Шрифт */
+}
+
+.game-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-items {
+    display: flex;
+    justify-content: center;
+    overflow-x: auto; /* Прокрутка при необходимости */
+    padding: 20px 0; /* Отступы */
+}
+
+.game-item {
+    margin: 0 10px; /* Отступы между элементами */
+    text-align: center; /* Центрирование текста */
+}
+
+.game-cover {
+    width: 100px; /* Ширина изображения */
+    height: 100px; /* Высота изображения */
+    object-fit: cover; /* Обтекание изображений */
+    border-radius: 10px; /* Закругление углов */
+    transition: transform 0.3s; /* Плавный переход при наведении */
+}
+
+.game-cover:hover {
+    transform: scale(1.1); /* Увеличение при наведении */
+}
+
+.game-details {
+    text-align: center;
+    margin-top: 20px; /* Отступ сверху */
+}
+
+.game-title {
+    font-size: 24px; /* Размер заголовка */
+    margin: 10px 0; /* Отступы */
+}
+
+.play-button {
+    background-color: #007bff; /* Цвет кнопки */
+    color: white; /* Цвет текста на кнопке */
+    border: none; /* Убираем границы */
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    border-radius: 5px; /* Закругление углов */
+    cursor: pointer; /* Курсор при наведении */
+    transition: background-color 0.3s; /* Плавный переход цвета */
+}
+
+.play-button:hover {
+    background-color: #0056b3; /* Цвет кнопки при наведении */
+}
+
