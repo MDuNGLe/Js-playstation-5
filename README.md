@@ -1,8 +1,28 @@
-# React + Vite
+# Проект Playstation 5
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 14.10.2024
 
-Currently, two official plugins are available:
+- ### Разработан макет проекта
+- ### Расположили главные элеменеты (Консоль и джойстик на фоне)
+- ### Выполнин коммит на gitHub
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Результат на сегоднешний день
+
+![Фото](https://i.imgur.com/Cheu6Ui.png)
+
+```jsx
+import background from "../assets/background.png";
+import playstation from "../assets/Playstation.png";
+import dualshock from "../assets/dualshock.png";
+
+export const MainPage = () => {
+    return (
+        <div className="relative">
+            <img src={background} alt="backgrond" className="relative"/>
+            <img src={playstation} alt="" className="absolute top-[390px] left-[400px]"/>
+            <img src={dualshock} alt="dualshock" className="absolute top-[560px] left-[610px]"/>
+        </div>
+    );
+
+};
+```
