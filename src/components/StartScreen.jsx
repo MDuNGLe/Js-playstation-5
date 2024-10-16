@@ -1,33 +1,18 @@
-// import bg from "../assets/ps-bg.png";
-//
-// const StartScreen = () => {
-//
-//     return ()
-// }
-
-import bg from '../assets/ps-bg.png'; // Импорт фона
-import psIcon from '../assets/ps-icon.png'; // Импорт иконки
+import bg from '../assets/ps-bg.png';
+import psIcon from '../assets/ps-icon.png';
 
 const StartScreen = () => {
     return (
         <div
-            className="relative h-screen w-full flex items-center justify-center bg-black"
-            style={{ backgroundImage: `url(${bg})`, backgroundSize: 'cover' }} // Устанавливаем фон
-        >
+            className="absolute top-[130px] left-[550px]"
 
-            <div className="absolute top-1/3 text-center text-white">
-                <p className="text-xl mb-8">
+        >
+            <img src={bg} alt=""/>
+            <div className="text-center text-white ">
+                <p className="text-2xl mb-8 absolute top-[65px] right-[150px]">
                     Нажмите кнопку PS на вашем контроллере
                 </p>
-            </div>
-
-
-            <div className="relative">
-                <img
-                    src={psIcon} // Замени путь на свою иконку
-                    alt="PS Button"
-                    className="w-24 h-24" // Размер иконки можно подкорректировать
-                />
+                <img src={psIcon} alt="PS Button" className="w-24 h-24 absolute top-[195px] right-[373px]"/>
             </div>
         </div>
     );

@@ -14,8 +14,10 @@ import ShareButton from '../assets/button-share.svg';
 import MicroButton from '../assets/button-micro.svg';
 import PSButton from '../assets/psButton.svg';
 
-const Gamepad = () => {
-
+const Gamepad = ({ onPSButtonClick }) => {
+    const handlePSButtonClick = () => {
+        onPSButtonClick();
+    };
     return (
         <div>
             {/* Стрелочки */}
@@ -47,15 +49,19 @@ const Gamepad = () => {
             </button>
 
             {/* Вспомогательные кнопки */}
-            <button
-                style={{position: 'absolute', top: '788px', left: '945px'}}>
+            {/*<button*/}
+            {/*    style={{position: 'absolute', top: '788px', left: '945px'}}>*/}
+            {/*    <img src={PSButton} alt="PSButton" className="m-0 p-0 block"/>*/}
+            {/*</button>*/}
+            <button style={{position: 'absolute', top: '788px', left: '945px'}} onClick={handlePSButtonClick}>
                 <img src={PSButton} alt="PSButton" className="m-0 p-0 block"/>
             </button>
+
             <button style={{position: 'absolute', top: '825px', left: '946px'}}>
                 <img src={MicroButton} alt="MicroButton" className="m-0 p-0 block"/>
             </button>
             <button style={{position: 'absolute', top: '666px', left: '873px'}}>
-            <img src={CenterPad} alt="CenterPad" className="m-0 p-0 block"/>
+                <img src={CenterPad} alt="CenterPad" className="m-0 p-0 block"/>
             </button>
             <button style={{position: 'absolute', top: '682px', left: '847px'}}>
                 <img src={ShareButton} alt="ShareButton" className="m-0 p-0 block"/>
@@ -66,5 +72,6 @@ const Gamepad = () => {
         </div>
     );
 };
+
 
 export default Gamepad;
