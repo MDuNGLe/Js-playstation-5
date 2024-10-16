@@ -6,7 +6,7 @@ import Gamepad from '../components/Gamepad.jsx';
 import Playstation from "../components/Console.jsx";
 
 export const MainPage = () => {
-    const [screenOn, setScreenOn] = useState(false); // Состояние для экрана
+    const [screenOn, setScreenOn] = useState(false);
 
     // Функция для переключения состояния экрана
     const toggleScreen = () => {
@@ -19,11 +19,11 @@ export const MainPage = () => {
             <img src={background} alt="background" className="relative"/>
             <img src={dualshock} alt="dualshock" className="absolute top-[560px] left-[610px]"/>
             <div>
-                <ConsoleScreen isScreenOn={screenOn} />
-                <Gamepad/>
+                <ConsoleScreen isScreenOn={screenOn} toggleScreen={toggleScreen} />
+                <Gamepad />
                 <Playstation toggleScreen={toggleScreen} screenOn={screenOn} />
             </div>
+
         </div>
     );
-
 };
