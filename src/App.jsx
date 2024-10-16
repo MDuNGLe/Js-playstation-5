@@ -1,11 +1,11 @@
-import {MainPage} from "./pages/MainPage.jsx";
+import ConsoleScreen from './components/ConsoleScreen.jsx';
 
-
-function App() {
+const App = () => {
     return (
-        <>
-            <MainPage/>
-        </>
+        <div>
+            <ConsoleScreen />
+        </div>
     );
-}
+};
+
 export default App;
