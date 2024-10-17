@@ -1,5 +1,5 @@
-import PS from '../assets/Playstation.png';
 import React from "react";
+import PS from '../assets/Playstation.png';
 
 const Playstation = ({ toggleScreen, screenOn }) => {
     return (

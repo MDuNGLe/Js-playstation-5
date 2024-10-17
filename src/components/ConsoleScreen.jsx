@@ -6,7 +6,6 @@ import Profile from './Profile.jsx';
 import ConsoleSpecs from './ConsoleSpecs.jsx';
 import bg from "../assets/ps-bg.png"; // Оставляем один импорт bg
 import Header from './Header';
-import Menu from '../data/Menu';
 
 
 const ConsoleScreen = ({ isScreenOn, currentScreen }) => {

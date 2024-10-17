@@ -1,14 +1,16 @@
-import React from "react";
+import React from 'react';
+import Header from './Header';
 
-const MainMenu = ({ goToGameList, goToProfile, goToSpecs }) => {
-    return (
-        <div className="text-white text-center">
-            <h1>Главное меню</h1>
-            <button onClick={goToGameList}>Список игр</button>
-            <button onClick={goToProfile}>Профиль</button>
-            <button onClick={goToSpecs}>Характеристики консоли</button>
-        </div>
-    );
-};
+const MainMenu = () => (
+    <div className="main-menu">
+        {/* Передача нужных функций в Header */}
+        <Header
+            goToGameList={() => console.log('Переход к списку игр')}
+            goToProfile={() => console.log('Переход в профиль')}
+            goToSpecs={() => console.log('Переход к характеристикам')}
+        />
+        <p>Здесь расположены ваши игры и настройки.</p>
+    </div>
+);
 
 export default MainMenu;

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types'; // Импортируем для валидации пропсов
+import React from 'react';
+import PropTypes from 'prop-types';
 import ArrowUp from '../assets/up-arrow.svg';
 import ArrowDown from '../assets/down-arrow.svg';
 import ArrowLeft from '../assets/left-arrow.svg';
@@ -10,56 +10,42 @@ import Square from '../assets/button-square.svg';
 import Triangle from '../assets/button-triangle.svg';
 import OptionsButton from '../assets/button-options.svg';
 import CenterPad from '../assets/center-pad.svg';
-import Stick from '../assets/Stick.svg';
 import ShareButton from '../assets/button-share.svg';
 import MicroButton from '../assets/button-micro.svg';
 import PSButton from '../assets/psButton.svg';
 
-const Gamepad = ({ onPSButtonClick }) => {
-    const [activeIndex, setActiveIndex] = useState(0); // Индекс активного пункта меню
-
+const Gamepad = ({ onArrowPress, onEnterPress, onPSButtonClick, activeMenuIndex, menuScreens }) => {
+    // Функция обработки нажатий стрелок
     const handleArrowPress = (direction) => {
-        if (direction === 'left') {
-            setActiveIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : 3));
-        } else if (direction === 'right') {
-            setActiveIndex((prevIndex) => (prevIndex < 3 ? prevIndex + 1 : 0));
-        }
+        onArrowPress(direction); // Передача нажатия стрелок вверх/вниз
+    };
+
+    // Обработка нажатия на "Enter"
+    const handleEnterPress = () => {
+        onEnterPress(); // Передача нажатия Enter
     };
 
     return (
         <div>
-            {/* Отображаем состояние экрана с активным пунктом */}
-            <p className="text-center mb-4">Экран включен. Активный пункт: {activeIndex}</p>
+            <p className="text-center mb-4">Экран включен.</p>
 
             {/* Стрелочки */}
-            <button
-                style={{ position: 'absolute', top: '708px', left: '808px' }}
-                onClick={() => handleArrowPress('up')}
-            >
+            <button style={{ position: 'absolute', top: '708px', left: '808px' }} onClick={() => handleArrowPress('up')}>
                 <img src={ArrowUp} alt="Arrow Up" className="m-0 p-0 block" />
             </button>
-            <button
-                style={{ position: 'absolute', top: '733px', left: '785px' }}
-                onClick={() => handleArrowPress('left')}
-            >
+            <button style={{ position: 'absolute', top: '733px', left: '785px' }} onClick={() => handleArrowPress('left')}>
                 <img src={ArrowLeft} alt="Arrow Left" className="m-0 p-0 block" />
             </button>
-            <button
-                style={{ position: 'absolute', top: '750px', left: '808px' }}
-                onClick={() => handleArrowPress('down')}
-            >
+            <button style={{ position: 'absolute', top: '750px', left: '808px' }} onClick={() => handleArrowPress('down')}>
                 <img src={ArrowDown} alt="Arrow Down" className="m-0 p-0 block" />
             </button>
-            <button
-                style={{ position: 'absolute', top: '733px', left: '827px' }}
-                onClick={() => handleArrowPress('right')}
-            >
+            <button style={{ position: 'absolute', top: '733px', left: '827px' }} onClick={() => handleArrowPress('right')}>
                 <img src={ArrowRight} alt="Arrow Right" className="m-0 p-0 block" />
             </button>
 
             {/* Основные кнопки */}
-            <button style={{ position: 'absolute', top: '698px', left: '1081px' }}>
-                <img src={Triangle} alt="Triangle" className="m-0 p-0 block" />
+            <button style={{ position: 'absolute', top: '698px', left: '1081px' }} onClick={handleEnterPress}>
+                <img src={Circle} alt="Select" className="m-0 p-0 block" />
             </button>
             <button style={{ position: 'absolute', top: '731px', left: '1049px' }}>
                 <img src={Square} alt="Square" className="m-0 p-0 block" />
@@ -68,7 +54,7 @@ const Gamepad = ({ onPSButtonClick }) => {
                 <img src={Cross} alt="Cross" className="m-0 p-0 block" />
             </button>
             <button style={{ position: 'absolute', top: '731px', left: '1113px' }}>
-                <img src={Circle} alt="Circle" className="m-0 p-0 block" />
+                <img src={Triangle} alt="Triangle" className="m-0 p-0 block" />
             </button>
 
             {/* Вспомогательные кнопки */}
@@ -93,7 +79,11 @@ const Gamepad = ({ onPSButtonClick }) => {
 
 // Пропсы валидации
 Gamepad.propTypes = {
-    onPSButtonClick: PropTypes.func.isRequired, // Проверка типа для функции клика по PSButton
+    onArrowPress: PropTypes.func.isRequired,
+    onEnterPress: PropTypes.func.isRequired,
+    onPSButtonClick: PropTypes.func.isRequired,
+    activeMenuIndex: PropTypes.number.isRequired,
+    menuScreens: PropTypes.arrayOf(PropTypes.string).isRequired
 };
 
 export default Gamepad;
