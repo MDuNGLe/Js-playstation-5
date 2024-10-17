@@ -15,9 +15,6 @@ import MicroButton from '../assets/button-micro.svg';
 import PSButton from '../assets/psButton.svg';
 
 const Gamepad = ({ onPSButtonClick }) => {
-    const handlePSButtonClick = () => {
-        onPSButtonClick();
-    };
     return (
         <div>
             {/* Стрелочки */}
@@ -53,7 +50,7 @@ const Gamepad = ({ onPSButtonClick }) => {
             {/*    style={{position: 'absolute', top: '788px', left: '945px'}}>*/}
             {/*    <img src={PSButton} alt="PSButton" className="m-0 p-0 block"/>*/}
             {/*</button>*/}
-            <button style={{position: 'absolute', top: '788px', left: '945px'}} onClick={handlePSButtonClick}>
+            <button style={{position: 'absolute', top: '788px', left: '945px'}} onClick={onPSButtonClick}>
                 <img src={PSButton} alt="PSButton" className="m-0 p-0 block"/>
             </button>
 

@@ -1,19 +1,14 @@
-import React, { useState } from 'react';
 import PS from '../assets/Playstation.png';
+import React from "react";
 
-const Console = ({ onToggleConsole }) => {
-    const [consoleOn, setConsoleOn] = useState(false);
-
-    const toggleConsole = () => {
-        setConsoleOn(!consoleOn);
-        onToggleConsole(!consoleOn);  // Уведомляем MainPage о состоянии консоли
-    };
-
+const Playstation = ({ toggleScreen, screenOn }) => {
     return (
-        <button onClick={toggleConsole} style={{ cursor: 'pointer', position: 'absolute', top: '390px', left: '400px' }}>
-            <img src={PS} alt="Playstation" className="m-0 p-0 block"/>
-        </button>
+        <div>
+            <button style={{ position: 'absolute', top: '390px', left: '400px' }} onClick={toggleScreen}>
+                <img src={PS} alt="Playstation" className="m-0 p-0 block"/>
+            </button>
+        </div>
     );
 };
 
-export default Console;
+export default Playstation;
