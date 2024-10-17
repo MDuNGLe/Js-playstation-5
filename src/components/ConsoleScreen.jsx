@@ -1,26 +1,49 @@
+import React, { useEffect, useState } from "react";
+import StartScreen from './StartScreen.jsx';
+import MainMenu from './MainMenu.jsx';
+import GameList from './GameList.jsx';
+import Profile from './Profile.jsx';
+import ConsoleSpecs from './ConsoleSpecs.jsx';
+import bg from "../assets/ps-bg.png"; // Оставляем один импорт bg
 import Header from './Header';
-import GameList from './GameList';
-import bg from '../assets/ps-bg.png';
 import Menu from '../data/Menu';
 
-const ConsoleScreen = () => {
-    const menu = new Menu();
 
-    const games = menu.getGames(); // Получаем список игр
+const ConsoleScreen = ({ isScreenOn, currentScreen }) => {
+    const renderScreen = () => {
+        switch (currentScreen) {
+            case "start":
+                return <StartScreen />;
+            case "mainMenu":
+                return (
+                    <MainMenu
+                        goToGameList={() => setCurrentScreen("gameList")}
+                        goToProfile={() => setCurrentScreen("profile")}
+                        goToSpecs={() => setCurrentScreen("consoleSpecs")}
+                    />
+                );
+            case "gameList":
+                return <GameList goToMainMenu={() => setCurrentScreen("mainMenu")} />;
+            case "profile":
+                return <Profile goToMainMenu={() => setCurrentScreen("mainMenu")} />;
+            case "consoleSpecs":
+                return <ConsoleSpecs goToMainMenu={() => setCurrentScreen("mainMenu")} />;
+            default:
+                return null;
+        }
+    };
 
     return (
-        <div className="console-screen">
-            {/* Контейнер для фона и элементов */}
-            <div
-                className="ps-bg"
-                style={{backgroundImage: `url(${bg})`}}
-            >
-                {/* Все элементы будут внутри ps-bg */}
-                <div className="absolute ">
-
-                    <GameList games={games}/> {/* Передаём игры в GameList */}
-                </div>
-            </div>
+        <div
+            className={`console-screen absolute ${isScreenOn ? 'bg-green-500' : 'bg-black'} w-[820px] h-[464px] overflow-hidden border-4 border-black rounded-[5px] top-[128px] left-[545px]`}
+            style={{
+                backgroundImage: isScreenOn ? `url(${bg})` : 'none',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat'
+            }}
+        >
+            {isScreenOn ? renderScreen() : <p className="text-center text-white">Экран выключен</p>}
         </div>
     );
 };

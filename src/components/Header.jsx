@@ -3,6 +3,7 @@ import gamepad from "../assets/gamepad.svg";
 import menu from "../assets/menu.svg";
 import setting from "../assets/setting.svg";
 import profile from "../assets/profile.svg";
+import bg from "../assets/ps-bg.png";
 
 const Header = ({ activeIndex }) => {
     const icons = [gamepad, menu, setting, profile];
