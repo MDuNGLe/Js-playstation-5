@@ -1,5 +1,3 @@
-i
-
 class Console {
     constructor(title, hasWarranty, ports, settings, connectedGamepads = []) {
         this.title = title;

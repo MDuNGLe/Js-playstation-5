@@ -1,15 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import StartScreen from './StartScreen.jsx';
 import MainMenu from './MainMenu.jsx';
 import GameList from './GameList.jsx';
 import Profile from './Profile.jsx';
 import ConsoleSpecs from './ConsoleSpecs.jsx';
-import bg from "../assets/ps-bg.png"; // Оставляем один импорт bg
+import bg from '../assets/ps-bg.png';
 import Header from './Header';
-import Menu from '../data/Menu';
 
-
-const ConsoleScreen = ({ isScreenOn, currentScreen }) => {
+const ConsoleScreen = ({ isScreenOn, currentScreen, goToGameList, goToProfile, goToSpecs, goToLibrary }) => {
     const renderScreen = () => {
         switch (currentScreen) {
             case "start":
@@ -17,9 +15,9 @@ const ConsoleScreen = ({ isScreenOn, currentScreen }) => {
             case "mainMenu":
                 return (
                     <MainMenu
-                        goToGameList={() => setCurrentScreen("gameList")}
-                        goToProfile={() => setCurrentScreen("profile")}
-                        goToSpecs={() => setCurrentScreen("consoleSpecs")}
+                        goToGameList={goToGameList}
+                        goToProfile={goToProfile}
+                        goToSpecs={goToSpecs}
                     />
                 );
             case "gameList":
