@@ -9,7 +9,7 @@ const Header = () => {
     return (
         <header className="header absolute top-[130px] left-[550px]">
             <div className="container">
-                <img src={bg} alt=""/>
+                {/*<img src={bg} alt=""/>*/}
                 <h1>SPIDER-MAN</h1>
                 <div className="header-icons">
                     <img src={gamepad} alt="gamepad"/>
