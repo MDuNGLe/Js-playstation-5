@@ -3,21 +3,12 @@
 @tailwind utilities;
 
 .container {
-
+    max-width: 820px;
 }
 
-.console-screen {
-    .console-screen {
-        position: relative;
-        width: 100vw; /* Или нужная ширина */
-        height: 100vh; /* Или нужная высота */
-        overflow: hidden; /* Чтобы избежать прокрутки */
-    }
 
-}
 
 /**/
-
 .header-icons  {
     display: flex;
     column-gap: 40px;
@@ -54,7 +45,6 @@
 body {
     background-color: black; /* Цвет фона */
     color: white; /* Цвет текста */
-    font-family: 'Arial', sans-serif; /* Шрифт */
 }
 
 .game-list {

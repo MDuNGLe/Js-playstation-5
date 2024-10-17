@@ -6,18 +6,18 @@ import Gamepad from '../components/Gamepad.jsx';
 
 export const MainPage = () => {
 
-
     return (
-        <div className="relative">
-            <img src={background} alt="backgrond" className="relative"/>
+        <div className="MainPage">
+            <img src={background} alt="backgrond" className=" "/>
             <img src={playstation} alt="console" className="absolute top-[390px] left-[400px]"/>
             <img src={dualshock} alt="dualshock" className="absolute top-[560px] left-[610px]"/>
-            <div>
-                <ConsoleScreen/>
-            </div>
-            <div>
+
+            <div className="components ">
+                <ConsoleScreen />
                 <Gamepad/>
             </div>
+
+
         </div>
     );
 

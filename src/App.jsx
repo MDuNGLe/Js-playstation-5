@@ -1,9 +1,9 @@
-import ConsoleScreen from './components/ConsoleScreen.jsx';
+import {MainPage} from './pages/MainPage.jsx';
 
 const App = () => {
     return (
         <div>
-            <ConsoleScreen />
+            <MainPage />
         </div>
     );
 };
