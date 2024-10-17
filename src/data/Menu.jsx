@@ -1,20 +1,18 @@
-// data/Menu.js
-import Game from './Game.jsx';
-
 class Menu {
-    constructor() {
-        this.games = []; // Массив для хранения игр
+    constructor(networkStatus, memory, notifications, controller) {
+        this.networkStatus = networkStatus;
+        this.memory = memory;
+        this.notifications = notifications;
+        this.controller = controller;
     }
 
-    // Метод для добавления игры
-    addGame(title, playtime, releaseDate, achievements = [], coverImage) {
-        const game = new Game(title, playtime, releaseDate, achievements, coverImage); // Передаём coverImage
-        this.games.push(game); // Добавляем игру в массив
-    }
-
-    // Метод для получения всех игр
-    getGames() {
-        return this.games;
+    getMenuSpecs() {
+        return {
+            networkStatus: this.networkStatus,
+            memory: this.memory,
+            notifications: this.notifications,
+            controller: this.controller
+        };
     }
 }
 

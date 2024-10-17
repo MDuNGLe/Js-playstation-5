@@ -31,8 +31,12 @@ export const MainPage = () => {
         setCurrentScreen("profile");
     };
 
-    const goToSpecs = () => {
+    const goToConsoleSpecs = () => {
         setCurrentScreen("consoleSpecs");
+    };
+
+    const goToReview = () => {
+        setCurrentScreen("review");
     };
 
     return (
@@ -41,15 +45,20 @@ export const MainPage = () => {
             <img src={dualshock} alt="dualshock" className="absolute top-[560px] left-[610px]" />
             <div>
                 <Playstation toggleScreen={toggleScreen} screenOn={screenOn} />
+
                 <ConsoleScreen
                     isScreenOn={screenOn}
                     currentScreen={currentScreen}
-                    goToGameList={goToGameList} // Передаем функцию библиотека
                     goToProfile={goToProfile}
-                    goToSpecs={goToSpecs}
+                    goToConsoleSpecs={goToConsoleSpecs}
+                    goToReview={goToReview}
+                    goToGameList={goToGameList}
                 />
+
                 {screenOn && <Gamepad onPSButtonClick={handlePSButtonClick} />}
             </div>
         </div>
     );
+
+
 };

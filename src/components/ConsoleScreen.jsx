@@ -1,13 +1,14 @@
-import React from "react";
-import StartScreen from './StartScreen.jsx';
-import MainMenu from './MainMenu.jsx';
-import GameList from './GameList.jsx';
-import Profile from './Profile.jsx';
-import ConsoleSpecs from './ConsoleSpecs.jsx';
-import bg from '../assets/ps-bg.png';
-import Header from './Header';
 
-const ConsoleScreen = ({ isScreenOn, currentScreen, goToGameList, goToProfile, goToSpecs, goToLibrary }) => {
+import React from "react";
+import MainMenu from './MainMenu';
+import StartScreen from './StartScreen';
+import GameList from './GameList';
+import Profile from './Profile';
+import ConsoleSpecs from './ConsoleSpecs';
+import Review from './Review';
+import bg from "../assets/ps-bg.png";
+
+const ConsoleScreen = ({ isScreenOn, currentScreen, goToGameList, goToProfile, goToConsoleSpecs, goToReview }) => {
     const renderScreen = () => {
         switch (currentScreen) {
             case "start":
@@ -17,7 +18,8 @@ const ConsoleScreen = ({ isScreenOn, currentScreen, goToGameList, goToProfile, g
                     <MainMenu
                         goToGameList={goToGameList}
                         goToProfile={goToProfile}
-                        goToSpecs={goToSpecs}
+                        goToConsoleSpecs={goToConsoleSpecs}
+                        goToReview={goToReview}
                     />
                 );
             case "gameList":
@@ -26,6 +28,8 @@ const ConsoleScreen = ({ isScreenOn, currentScreen, goToGameList, goToProfile, g
                 return <Profile goToMainMenu={() => setCurrentScreen("mainMenu")} />;
             case "consoleSpecs":
                 return <ConsoleSpecs goToMainMenu={() => setCurrentScreen("mainMenu")} />;
+            case "review":
+                return <Review goToMainMenu={() => setCurrentScreen("mainMenu")} />;
             default:
                 return null;
         }
@@ -41,6 +45,14 @@ const ConsoleScreen = ({ isScreenOn, currentScreen, goToGameList, goToProfile, g
                 backgroundRepeat: 'no-repeat'
             }}
         >
+            {/* Иконки для навигации */}
+            <MainMenu
+                goToGameList={goToGameList}
+                goToProfile={goToProfile}
+                goToConsoleSpecs={goToConsoleSpecs}
+                goToReview={goToReview}
+            />
+            {/* Основной экран */}
             {isScreenOn ? renderScreen() : <p className="text-center text-white">Экран выключен</p>}
         </div>
     );

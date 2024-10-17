@@ -17,10 +17,12 @@ const Header = ({ activeIndex }) => {
                             key={index}
                             src={icon}
                             alt={iconLabels[index]}
+
                         />
                     ))}
                 </div>
             </div>
+
         </header>
     );
 };
