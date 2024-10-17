@@ -1,23 +1,28 @@
+import PropTypes from 'prop-types';
 import gamepad from "../assets/gamepad.svg";
 import menu from "../assets/menu.svg";
 import setting from "../assets/setting.svg";
 import profile from "../assets/profile.svg";
 import bg from "../assets/ps-bg.png";
 
-
-const Header = () => {
+const Header = ({ activeIndex }) => {
+    const icons = [gamepad, menu, setting, profile];
+    const iconLabels = ['Gamepad', 'Menu', 'Setting', 'Profile'];
     return (
-        <header className="header absolute top-[130px] left-[550px]">
-            <div className="container">
-                {/*<img src={bg} alt=""/>*/}
-                <h1>SPIDER-MAN</h1>
+        <header className="absolute top-[130px] left-[510px]">
+            <div className="container flex mw-[820px]">
                 <div className="header-icons">
-                    <img src={gamepad} alt="gamepad"/>
-                    <img src={menu} alt="menu"/>
-                    <img src={setting} alt="setting"/>
-                    <img src={profile} alt="profile"/>
+                    {icons.map((icon, index) => (
+                        <img
+                            key={index}
+                            src={icon}
+                            alt={iconLabels[index]}
+
+                        />
+                    ))}
                 </div>
             </div>
+
         </header>
     );
 };

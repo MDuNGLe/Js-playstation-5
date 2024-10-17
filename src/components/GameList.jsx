@@ -1,4 +1,5 @@
-import React from "react";
+import PropTypes from 'prop-types'; // Импортируем prop-types
+import GameItem from './GameItem';
 
 const GameList = ({ goToMainMenu }) => {
     const games = [
@@ -18,6 +19,17 @@ const GameList = ({ goToMainMenu }) => {
             <button onClick={goToMainMenu}>Назад в главное меню</button>
         </div>
     );
+};
+
+// Добавляем валидацию типов
+GameList.propTypes = {
+    games: PropTypes.arrayOf(PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        playtime: PropTypes.number.isRequired,
+        releaseDate: PropTypes.string.isRequired,
+        coverImage: PropTypes.string.isRequired,
+        achievements: PropTypes.array, // achievements могут быть необязательными
+    })).isRequired,
 };
 
 export default GameList;

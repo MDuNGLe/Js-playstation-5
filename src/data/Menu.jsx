@@ -1,20 +1,19 @@
-// data/Menu.js
 class Menu {
-    constructor() {
-        this.games = []; // Массив для хранения игр
+    constructor(networkStatus, memory, notifications, controller) {
+        this.networkStatus = networkStatus;
+        this.memory = memory;
+        this.notifications = notifications;
+        this.controller = controller;
     }
 
-    // Метод для добавления игры
-    addGame(game) {
-        this.games.push(game);
+    getMenuSpecs() {
+        return {
+            networkStatus: this.networkStatus,
+            memory: this.memory,
+            notifications: this.notifications,
+            controller: this.controller
+        };
     }
-
-    // Метод для отображения игр (для отладки)
-    displayGames() {
-        console.log(this.games);
-    }
-
-    // Другие методы...
 }
 
 export default Menu;

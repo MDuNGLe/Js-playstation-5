@@ -1,18 +1,17 @@
-import bg from '../assets/ps-bg.png';
+// import bg from '../assets/ps-bg.png';
+import React from "react";
 import psIcon from '../assets/ps-icon.png';
 
-const StartScreen = () => {
+const StartScreen = ({ onPSButtonClick }) => {
     return (
-        <div
-            className="absolute top-[130px] left-[550px]"
+        <div className="absolute top-[110px] left-[150px] justify-items-center">
 
-        >
-            <img src={bg} alt=""/>
             <div className="text-center text-white ">
-                <p className="text-2xl mb-8 absolute top-[65px] right-[150px]">
+                <p className="text-2xl mb-8">
                     Нажмите кнопку PS на вашем контроллере
                 </p>
-                <img src={psIcon} alt="PS Button" className="w-24 h-24 absolute top-[195px] right-[373px]"/>
+
+                <img src={psIcon} alt="PS Button" className="w-24 h-24 absolute top-[100px] right-[173px]"/>
             </div>
         </div>
     );

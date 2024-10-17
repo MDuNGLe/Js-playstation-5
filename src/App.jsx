@@ -1,11 +1,11 @@
-import {MainPage} from "./pages/MainPage.jsx";
+import {MainPage} from './pages/MainPage.jsx';
 
-
-function App() {
+const App = () => {
     return (
-        <>
-            <MainPage/>
-        </>
+        <div>
+            <MainPage />
+        </div>
     );
-}
+};
+
 export default App;
