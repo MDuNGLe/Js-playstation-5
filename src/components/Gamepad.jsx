@@ -49,14 +49,10 @@ const Gamepad = ({ onPSButtonClick }) => {
             </button>
 
             {/* Вспомогательные кнопки */}
-            {/*<button*/}
-            {/*    style={{position: 'absolute', top: '788px', left: '945px'}}>*/}
-            {/*    <img src={PSButton} alt="PSButton" className="m-0 p-0 block"/>*/}
-            {/*</button>*/}
-            <button style={{position: 'absolute', top: '788px', left: '945px'}} onClick={handlePSButtonClick}>
+
+            <button style={{position: 'absolute', top: '788px', left: '945px'}} onClick={hancomdlePSButtonClick}>
                 <img src={PSButton} alt="PSButton" className="m-0 p-0 block"/>
             </button>
-
             <button style={{position: 'absolute', top: '825px', left: '946px'}}>
                 <img src={MicroButton} alt="MicroButton" className="m-0 p-0 block"/>
             </button>
